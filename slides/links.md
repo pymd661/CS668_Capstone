@@ -1,1 +1,3 @@
 [Project Proposal](https://docs.google.com/presentation/d/e/2PACX-1vQcxognzm_yWhd18K8u_6NTPAAGTPkjTaTgJhIi23Ao9vhU9V5yiA-gOsfo11nrw3AkTNd5TO7984Ur/pub?start=false&loop=false&delayms=3000)
+
+note: right click and open in new tab
