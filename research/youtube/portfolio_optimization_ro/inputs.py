@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import numpy as np
 from scipy.optimize import minimize
 import matplotlib
-matplotlib.use("TkAgg")
+matplotlib.use("TkAgg") # need this if running on ubuntu or comman line, not in a notebook
 import matplotlib.pyplot as plt
 
 
