@@ -13,7 +13,7 @@ tickers = ['SPY','BND','GLD','QQQ','VTI']
 
 ### Define the time range
 end_date = datetime.today()
-start_date = '2007-04-03'
+start_date = '2008-01-01'
 
 ### Get the adjusted close price
 adj_close_df = pd.DataFrame() 
