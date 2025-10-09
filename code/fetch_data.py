@@ -3,6 +3,8 @@ import pandas_datareader.data as web
 import yfinance as yf
 import datetime
 import numpy as np
+import xlwings as xw
+from pathlib import Path
 
 
 def get_etf_monthly_data(state_date,end_date):
@@ -18,8 +20,9 @@ def get_etf_monthly_data(state_date,end_date):
         # Need to calculate the monthly log returns
         etf_log_monthly_returns = np.log(etf_monthly_data/etf_monthly_data.shift(1)).dropna()
         etf_log_monthly_returns.rename(columns={'SPY':'spy_log_return', 'AGG':'agg_log_return'},inplace=True) 
-
-        print(etf_log_monthly_returns)
+        
+        return etf_log_monthly_returns
+        # print(etf_log_monthly_returns)
 
 
     except Exception as e:
@@ -52,7 +55,13 @@ def get_macro_data(start_date,end_date):
     end = datetime.datetime.strptime(end_date, '%Y-%m-%d')
 
     macro_data = web.DataReader(list(fred_series.keys()),'fred',start,end)
-    print(macro_data)
+    # print(type(macro_data))
+    return macro_data
 
-get_macro_data('2004-01-01','2025-10-01')
+df = get_macro_data('2004-01-01','2025-10-01')
+out = Path.home() / "Documents" / "data.xlsx"
+df.to_excel(out, index=True)  # index=True is default; keep if you want the index
+print(out)
+
+# print(type(get_macro_data('2004-01-01','2025-10-01')))
 # get_etf_monthly_data('2004-01-01','2025-10-01')
