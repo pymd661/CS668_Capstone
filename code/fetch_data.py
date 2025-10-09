@@ -43,9 +43,9 @@ def get_macro_data(start_date,end_date):
         'DFII10': '10_Yr_Tips',
         'MORTGAGE30US': "30_Year_Avg_Mortgage",
         'PERMIT': 'PERMIT',
-        'BAA': 'Corporate_Yield_1',
-        'AAA': 'Corporate_Yield_2',
-        'FEDFUNDS': 'Fed_Funds_Rate',
+        'DBAA': 'Corporate_Yield_1',
+        'DAAA': 'Corporate_Yield_2',
+        'DFF': 'Fed_Funds_Rate',
         'GDPC1': 'GDP_Real',
         'UNRATE': 'Unemployment_Rate'
     }
