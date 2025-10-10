@@ -10,6 +10,6 @@ def mom_change(x):#month over month change
     return x.pct_change(1)
 
 def forward_fill_monthly(x):
-    s = s.copy()
-    s.index = pd.to_datetime(s.index)
-    return s.resample("M").ffill()
+    x = x.copy()
+    x.index = pd.to_datetime(x.index)
+    return x.resample("M").ffill()
