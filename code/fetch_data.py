@@ -5,7 +5,7 @@ import datetime
 import numpy as np
 import xlwings as xw
 from pathlib import Path
-
+import fred_fuctions
 
 def get_etf_monthly_data(state_date,end_date):
     try:
@@ -58,7 +58,12 @@ def get_macro_data(start_date,end_date):
     macro_data = web.DataReader(list(fred_series.keys()),'fred',start,end)
     macro_data.rename(columns=fred_series)
 
-    
+    macro_month_end = macro_data.resample("M").last()
+    print(macro_month_end)   
+
+
+
+
 
     
     
@@ -69,7 +74,7 @@ def get_macro_data(start_date,end_date):
     
     
     
-    print(type(macro_data))
+
 
 
 
@@ -82,5 +87,5 @@ def get_macro_data(start_date,end_date):
 # df.to_excel(out, index=True)  # index=True is default; keep if you want the index
 # print(out)
 
-# print(type(get_macro_data('2004-01-01','2025-10-01')))
+print(type(get_macro_data('2004-01-01','2025-10-01')))
 # get_etf_monthly_data('2004-01-01','2025-10-01')
