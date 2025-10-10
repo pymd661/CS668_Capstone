@@ -7,12 +7,13 @@ import xlwings as xw
 from pathlib import Path
 import fred_functions
 
+ 
 def get_etf_monthly_data(start_date,end_date):
     try:
         # get ETF historical prices from Yahoo Finance
         etf_tickers = ['SPY','AGG','TLT','IEF','SHY','VBMFX','VUSTX']
-        etf_daily_data = yf.download(etf_tickers, start=start_date, end=end_date, auto_adjust=True)['Close']
-        print(etf_daily_data)
+        etf_daily_data = yf.download(etf_tickers, start=start_date, end=end_date, auto_adjust=True,interval="1d",actions=False,progress=False,threads=False,repair=False)['Close']
+        return etf_daily_data
 
 
     except Exception as e:
@@ -52,7 +53,7 @@ def get_macro_data(start_date,end_date):
 
 
 df = get_etf_monthly_data('2004-01-01','2025-10-01')
-
+print (df)
 
 # df = get_macro_data('2004-01-01','2025-10-01')
 # out = Path.home() / "Documents" / "data.xlsx"
