@@ -11,7 +11,17 @@ def get_etf_monthly_data(start_date,end_date):
     try:
         # get ETF historical prices from Yahoo Finance
         etf_tickers = ['SPY','AGG','TLT','IEF','SHY','VBMFX','VUSTX']
+        # we need to get the dialy returns and then calculate the monthly
+        # for historical performance analysis we set the auto_adjust = True to get adjusted close price
         etf_daily_data = yf.download(etf_tickers, start=start_date, end=end_date, auto_adjust=True)['Close']
+        # etf_monthly_data = etf_daily_data.resample("M").last()
+        # etf_simple_monthly_returns = etf_monthly_data.pct_change().dropna()
+        # etf_simple_monthly_returns.rename(columns={'SPY':'spy_return', 'AGG':'agg_return','TLT':'tlt_return','IEF':'ief_return'},inplace=True) 
+        # # Need to calculate the monthly log returns
+        # etf_log_monthly_returns = np.log(etf_monthly_data/etf_monthly_data.shift(1)).dropna()
+        # etf_log_monthly_returns.rename(columns={'SPY':'spy_log_return', 'AGG':'agg_log_return','TLT':'tlt_log_return','IEF':'ief_log_return'},inplace=True) 
+        
+        # return etf_monthly_data, etf_simple_monthly_returns, etf_log_monthly_returns
         print(etf_daily_data)
 
 
@@ -47,11 +57,38 @@ def get_macro_data(start_date,end_date):
     macro_data = web.DataReader(list(fred_series.keys()),'fred',start,end)
     macro_data.rename(columns=fred_series,inplace=True)
 
-    print(macro_data)
+    macro_month_end = macro_data.resample("M").last()
+
+    # create an empty dataframe for feature engineering
+    X = pd.DataFrame(index=macro_month_end.index)
+
+    #monthly 
+    for col in ["CPI","CoreCPI","IndustrialProd","RealRetail","Permits","UnemploymentRate"]:
+        if col in macro_month_end.columns:
+            X[col + "_YoY"] = fred_functions.yoy_change(macro_month_end[col])
+
+
+    print(X)   
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
     # return macro_data
 
-
-df = get_etf_monthly_data('2004-01-01','2025-10-01')
 
 
 # df = get_macro_data('2004-01-01','2025-10-01')
@@ -60,3 +97,6 @@ df = get_etf_monthly_data('2004-01-01','2025-10-01')
 # print(out)
 
 # print(type(get_macro_data('2004-01-01','2025-10-01')))
+get_etf_monthly_data('2004-01-01','2025-10-01')
+
+# get_macro_data('2003-11-01','2025-10-01')
