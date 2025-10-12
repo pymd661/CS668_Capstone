@@ -18,4 +18,7 @@ def forward_fill(df):
 def resample_me(df):
     return df.resample("ME").last()
 
+def shift_lag(df,lag_months=1):
+    return df.shift(lag_months)
+
 

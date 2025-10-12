@@ -53,8 +53,8 @@ def to_excel(df,file_name):
     df.to_excel(out, index=True)  # index=True is default; keep if you want the index
 
 # Create a dataframe for macro indicators and for returns
-df_macro = get_macro_data('1992-01-01','2025-10-01')
-df_returns = get_etf_monthly_data('1992-01-01','2025-10-01')
+df_macro = get_macro_data('1985-01-01','2025-10-01')
+df_returns = get_etf_monthly_data('1985-01-01','2025-10-01')
 
 # Call to_excel function to save as excel
 to_excel(df_macro,"df_macro.xlsx")
