@@ -24,8 +24,8 @@ def shift_lag(df,lag_months=1):
 def rolling_3m(df,columns_to_process):
     new_df = pd.DataFrame()
     for col in columns_to_process:
-        new_col_name_3m = f"{col}_rolling_3m_avg"
-        new_col_name_annualized = f"{col}_annual_rolling_3m"
+        new_col_name_3m = f"{col}_r3m"
+        new_col_name_annualized = f"{col}_ann_r3m"
         avg_3m_rolling = df[col].rolling(window=3).mean()
         new_df[new_col_name_3m] =avg_3m_rolling 
         new_df[new_col_name_annualized] = ((1 + avg_3m_rolling)**12) - 1 
