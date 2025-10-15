@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def cummulative_3m(df,columns_to_process,rolling_value=3,comp_freq=4):
+def cummulative_return(df,columns_to_process,rolling_value=3,comp_freq=4):
     for col in columns_to_process:
         cummulative_3m = (1+df[col]).rolling(rolling_value).apply(np.prod, raw=True) - 1
         df[f'{col}_{rolling_value}m'] = cummulative_3m
@@ -9,8 +9,7 @@ def cummulative_3m(df,columns_to_process,rolling_value=3,comp_freq=4):
         df[f'{col}_{rolling_value}m_ann'] = cummulative_3m_ann
     return df
 
-    
-    # spy_3m = (1 + df['SPY']).rolling(3).apply(np.prod, raw=True) - 1
-    # vbmfx_3m = (1 + df['VBMFX']).rolling(3).apply(np.prod, raw=True) - 1
-    # spy_3m_ann = (1 + spy_3m)**4 - 1
-    # vbmfx_3m_ann = (1 + vbmfx_3m)**4 - 1
+def ln_return(df,columns_to_process,rolling_value=3,comp_freq=12):
+        ln_3m = np.log1p(df) # calculate the natural log of the returns
+        ann_ln_3m = (ln_3m.rolling(window=3).mean()) * 12 # avg of the natural log returns, rolling 3 months
+        return ln_3m, ann_ln_3m
