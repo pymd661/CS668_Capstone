@@ -9,19 +9,19 @@ def yoy_change(df):#yoy change
 def mom_change(df):#month over month change
     return df.pct_change(1,fill_method=None)
 
-def forward_fill(df):
+def forward_fill(df): #fills in NA/Missing data using the previous value
     x = df.copy()
     x.index = pd.to_datetime(x.index)
     x = x.ffill()
     return x.ffill()
 
-def resample_me(df):
+def resample_me(df):# takes month-end values
     return df.resample("ME").last()
 
 def shift_lag(df,lag_months=1):
     return df.shift(lag_months)
 
-def rolling_3m(df,columns_to_process):
+def rolling_3m(df,columns_to_process): # calculates the rolling 3m avg and then annualizes that value
     new_df = pd.DataFrame()
     for col in columns_to_process:
         new_col_name_3m = f"{col}_r3m"
