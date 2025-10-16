@@ -33,12 +33,13 @@ def get_macro_data(start_date,end_date):
             'DGS10': 'UST10Y',
             'DGS2': 'UST2Y',
             'DGS3MO':'UST3M',
-            'DFII10': 'TIPS10Y',
             'DBAA': 'CorpBAA',
             'DAAA': 'CorpAAA',
             'BAMLCC0A0CMTRIV': 'CorpTotRetIndex',
             'DFF': 'FedFundsRate'
         }
+
+        #  'DFII10': 'TIPS10Y' - data only available in for 2003
         start = datetime.datetime.strptime(start_date, '%Y-%m-%d')
         end = datetime.datetime.strptime(end_date, '%Y-%m-%d')
         macro_data = web.DataReader(list(fred_series.keys()),'fred',start,end)
