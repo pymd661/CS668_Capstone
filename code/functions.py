@@ -4,6 +4,7 @@ def column_order():
     # index fund groups
     spy_group = [
         "SPY",
+        "SPY_mom",
         "SPY_3m",
         "SPY_3m_ann",
         "SPY_3m_sd",
@@ -13,6 +14,7 @@ def column_order():
     ]
     vbmfx_group = [
         "VBMFX",
+        "VBMFX_mom",
         "VBMFX_3m",
         "VBMFX_3m_ann",
         "VBMFX_3m_sd",
