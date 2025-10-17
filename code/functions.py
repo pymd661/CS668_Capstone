@@ -24,7 +24,7 @@ def column_order():
     ]
     # macro_groups
     realgdp_group = ["RealGDP", "RealGDP_3m"]
-    unemp_group = ["UnemploymentRate_r3m", "UnemploymentRate_ann_r3m"]
+    unemp_group = ["UnemploymentRate","UnemploymentRate_r3m", "UnemploymentRate_ann_r3m"]
     permits_group = ["Permits", "Permits_1m_r3m", "Permits_1m_ann_r3m", "Permits_1m_yoy"]
     cpi_group = ["CPI", "CPI_1m_r3m", "CPI_1m_ann_r3m", "CPI_1m_yoy"]
     corecpi_group = ["CoreCPI", "CoreCPI_1m_r3m", "CoreCPI_1m_ann_r3m", "CoreCPI_1m_yoy"]
