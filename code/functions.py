@@ -31,6 +31,10 @@ def column_order():
     indprod_group = ["IndustrialProd", "IndustrialProd_1m_r3m", "IndustrialProd_1m_ann_r3m", "IndustrialProd_1m_yoy"]
     realretail_group = ["RealRetail", "RealRetail_1m_r3m", "RealRetail_1m_ann_r3m", "RealRetail_1m_yoy"]
 
+    #macro_group_lagged_roll3m 
+    macro_3m_1lag= ["RealGDP_3m",'UnemploymentRate_r3m','Permits_1m_r3m',"IndustrialProd_1m_r3m",'CPI_1m_r3m','CoreCPI_1m_r3m','RealRetail_1m_r3m']
+
+
     # rates_group
     rate_group = ['Mort30Y', 'UST10Y', 'UST2Y', 'UST3M','CorpBAA', 'CorpAAA','FedFundsRate'] # 'TIPS10Y' removed
 
