@@ -59,4 +59,4 @@ df_returns = get_etf_monthly_data('1985-01-01','2025-10-01')
 
 # Call to_excel function to save as excel
 to_excel(df_macro,"df_macro.xlsx")
-to_excel(df_returns,"df_returns.xlsx")
+to_excel(df_returns,"df_prices.xlsx")
