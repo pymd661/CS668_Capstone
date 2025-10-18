@@ -1,7 +1,7 @@
 # column groups
 
 def column_order():
-    # index fund groups
+    # index fund groups, breaking out the different features in groups
     spy_group = [
         "SPY",
         "SPY_mom",
@@ -77,6 +77,12 @@ def column_order():
         baa_minus_10y_group,
         baa_minus_aaa_group,
     ]
-
     result = [f for l in GROUPS for f in l]
     return result
+
+def stock_price(stock_name,single_stock):
+    """Provide the stock name and the dataframe(single stock)"""
+    print(f'{stock_name} Price in April 1993:', '$',round(single_stock.iloc[0],2))
+    print(f'{stock_name} Price in September 2025:', '$',round(single_stock.iloc[-1],2))
+    price_change = round((single_stock.iloc[-1] - single_stock.iloc[0]) / single_stock.iloc[0])*100
+    print (f'Percent Change from April 1993 to September 2025:  {price_change}%')
