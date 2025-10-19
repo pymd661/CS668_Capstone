@@ -23,7 +23,7 @@ def column_order():
         "VBMFX_ann_ln_3m",
     ]
     # macro_groups
-    realgdp_group = ["RealGDP", "RealGDP_3m"]
+    realgdp_group = ["RealGDP", "RealGDP_yoy"]
     unemp_group = ["UnemploymentRate","UnemploymentRate_r3m", "UnemploymentRate_ann_r3m"]
     permits_group = ["Permits", "Permits_1m_r3m", "Permits_1m_ann_r3m", "Permits_1m_yoy"]
     cpi_group = ["CPI", "CPI_1m_r3m", "CPI_1m_ann_r3m", "CPI_1m_yoy"]
@@ -32,7 +32,7 @@ def column_order():
     realretail_group = ["RealRetail", "RealRetail_1m_r3m", "RealRetail_1m_ann_r3m", "RealRetail_1m_yoy"]
 
     #macro_group_lagged_roll3m 
-    macro_3m_1lag= ["RealGDP_3m",'UnemploymentRate_r3m','Permits_1m_r3m',"IndustrialProd_1m_r3m",'CPI_1m_r3m','CoreCPI_1m_r3m','RealRetail_1m_r3m']
+    macro_3m_1lag= ["RealGDP_yoy",'UnemploymentRate_r3m','Permits_1m_r3m',"IndustrialProd_1m_r3m",'CPI_1m_r3m','CoreCPI_1m_r3m','RealRetail_1m_r3m']
 
 
     # rates_group
