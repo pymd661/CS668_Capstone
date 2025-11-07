@@ -23,3 +23,5 @@ results/
 # Secrets
 .env
 .env.*
+__pycache__/
+*.pyc
