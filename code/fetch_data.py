@@ -28,7 +28,7 @@ def get_macro_data(start_date,end_date):
             'CPIAUCSL': 'CPI',
             'CPILFESL': 'CoreCPI',
             'INDPRO': 'IndustrialProd',
-            'RSXFS': 'RealTrade',
+            'MRTSSM44000USS': 'RetailTrade',
             'MORTGAGE30US': "Mort30Y",
             'DGS10': 'UST10Y',
             'DGS2': 'UST2Y',
