@@ -171,3 +171,13 @@ def stock_price(stock_name,single_stock):
     print(f'{stock_name} Price in September 2025:', '$',round(single_stock.iloc[-1],2))
     price_change = round((single_stock.iloc[-1] - single_stock.iloc[0]) / single_stock.iloc[0])*100
     print (f'Percent Change from April 1993 to September 2025:  {price_change}%')
+
+def bucket_indicator(row):
+    return row['SPY_Sharpe'] - row['VBMFX_Sharpe']
+
+def assign_bucket(row):
+    diff = row['SPY_Sharpe'] - row['VBMFX_Sharpe']
+    if diff > 0.7: return "80/20"
+    elif diff > 0.4: return "70/30"
+    elif diff > 0.0: return "60/40"
+    else: return "50/50"
