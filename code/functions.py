@@ -144,7 +144,7 @@ def column_order():
         corecpi_group,
         indprod_group,
         realretail_group,
-        macro_3m_1lag,
+        # macro_3m_1lag,
         rate_group,
         mort30_group,
         ust10y_group,
