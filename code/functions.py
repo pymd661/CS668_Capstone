@@ -175,9 +175,13 @@ def stock_price(stock_name,single_stock):
 def bucket_indicator(row):
     return row['SPY_Sharpe'] - row['VBMFX_Sharpe']
 
-def assign_bucket(row):
-    diff = row['SPY_Sharpe'] - row['VBMFX_Sharpe']
-    if diff > 0.7: return "80/20"
-    elif diff > 0.4: return "70/30"
-    elif diff > 0.0: return "60/40"
-    else: return "50/50"
+def assign_bucket(diff, q1,q2, q3):
+    if diff <= q1:
+        return '50/50'
+    elif q1 < diff <= q2:
+        return '60/40'
+    elif q2 < diff <= q3:
+        return '70/30'
+    else:
+        return '80/20'
+    
