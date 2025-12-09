@@ -175,9 +175,23 @@ def stock_price(stock_name,single_stock):
 def bucket_indicator(row):
     return row['SPY_Sharpe'] - row['VBMFX_Sharpe']
 
-def assign_bucket(row):
-    diff = row['SPY_Sharpe'] - row['VBMFX_Sharpe']
-    if diff > 0.7: return "80/20"
-    elif diff > 0.4: return "70/30"
-    elif diff > 0.0: return "60/40"
-    else: return "50/50"
+def assign_bucket(diff, q1, q2, q3):
+    """
+    Map diff -> allocation using quantile cutoffs.
+    q1, q2, q3 are the 25%, 50%, 75% quantiles of diff.
+    """
+    if diff <= q1:
+        return "50/50"
+    elif diff <= q2:
+        return "60/40"
+    elif diff <= q3:
+        return "70/30"
+    else:
+        return "80/20"
+
+# def assign_bucket(row): # used this for bucketing - clusters
+#     diff = row['SPY_Sharpe'] - row['VBMFX_Sharpe']
+#     if diff > 0.7: return "80/20"
+#     elif diff > 0.4: return "70/30"
+#     elif diff > 0.0: return "60/40"
+#     else: return "50/50"
