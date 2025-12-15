@@ -29,7 +29,7 @@ Within `/code`, major sections:
 
 - **Data Cleansing / Transformation**  
   Feature engineering, alignment, lagging (to simulate reporting delay), resampling, and final modeling dataset creation.  
-  - **[`/code/data_cleanse`](./code/data_cleanse)**
+  - **[`/code/data_cleanse`](./code/data_cleanse_feature_engineering)**
 
 - **Exploratory Data Analysis (EDA)**  
   Visualizations, distribution checks, correlation analysis, regime inspection, and sanity checks.  
