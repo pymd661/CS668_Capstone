@@ -33,15 +33,18 @@ Within `/code`, major sections:
 
 - **Exploratory Data Analysis (EDA)**  
   Visualizations, distribution checks, correlation analysis, regime inspection, and sanity checks.  
-  - **[`/code/eda`](./code/eda)**
+  - **[`/code/eda`](./code/eda.ipynb)**
 
 - **Data Fetching**  
   Scripts/notebooks to pull raw inputs (e.g., prices, returns, macro data) and store locally for downstream steps.  
-  - **[`/code/fetch_data`](./code/fetch_data)**
+  - **[`/code/fetch_data`](./code/fetch_data.py)**
  
 - **Train and Test**  
   Scripts to perform pre-processing and testing model
-  - **[`/code/experimentation`](./code/preprocessing_experimentation)**
+  - **[`/code/experimentation`](./code/preprocessing_experimentation.ipynb)**
+
+- **Functions**
+  Functions are stored in fred_funtions, index-prices, functions.py
 ---
 
 ## Steps
