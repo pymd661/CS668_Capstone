@@ -3,6 +3,10 @@
 ## Abstract
 This project explores whether macroeconomic features can be used to identify economic regimes and inform dynamic stock–bond allocation. 
 
+This research compares the performance of a 60/40 stock-bond portfolio versus a dynamic allocation using machine learning. This comparison offers a practical and direct real-world utility.The dynamic portfolio model is trained using historical SPY and VBMFX prices along with US macroeconomic indicators spanning from 1993 to 2025. K-means clustering is used to distinguish economic regimes, and these regimes are used to train a Ridge regression model to predict stock-allocation weights for the portfolio. The dynamic regression portfolio delivers slightly higher annualized returns with only a small increase in volatility compared to a monthly rebalanced 60/40 portfolio.In contrast, over the 2023–2025 test period, a buy-and-hold 60/40 portfolio (no rebalancing) earns higher returns with similar volatility compared to the dynamic portfolio that rebalances each month. 
+
+
+
 ## Parts of Capstone
 (1) fetches market and macro data
 (2) cleans and transforms features
