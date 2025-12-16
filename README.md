@@ -59,7 +59,5 @@ Within `/code`, major sections:
 
 ## Notes / Limitations
 - Results depend on the chosen sample period and feature set.
-- Further work: walk-forward validation, transaction costs/turnover, alternative models, and robustness across decades.
+- Further work: walk-forward validation, transaction costs/turnover, alternative models, various ETFs
 
-## Contact
-If you have questions or want to discuss the methodology, feel free to reach out.
