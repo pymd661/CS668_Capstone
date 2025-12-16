@@ -12,6 +12,7 @@ This research compares the performance of a 60/40 stock-bond portfolio versus a 
 (2) cleans and transforms features
 (3) performs exploratory analysis
 (4) trains a regression model to predict stock weight targets across predefined allocations (80/20, 70/30, 60/40, 50/50). 
+(5) Poster Summary **[Poster Link Created in Canva](https://www.canva.com/design/DAG6I1tFBiY/Hx0ZVLAl280yLdZ70KnZMQ/edit?utm_content=DAG6I1tFBiY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
 
 ## Key Results (Sep 2015–Sep 2025)
 - **Dynamic Regression Portfolio:** ~10.8% annualized return, ~10.5% annualized volatility, max drawdown ~-22%
